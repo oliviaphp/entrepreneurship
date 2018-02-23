@@ -219,28 +219,26 @@
 						<div class="col-md-12">
 							<div class="mu-video-area">
 								<h2>Watch Promo Video</h2>
-								<a class="mu-video-play-btn" href="#"><i class="fa fa-play" aria-hidden="true"></i></a>
+								<a class="mu-video-play-btn" href="#" onclick="playVid()"><i class="fa fa-play" aria-hidden="true"></i></a>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 
-			<script>
-				function myFunction() {
-			    	document.getElementById("UniTaskerDemo.mp4").innerHTML = "Hello World";
-				}
+		
 			</script>
 
 			<!-- Start Video content -->
 			
 			<div class="mu-video-content">
 				<div class="mu-video-iframe-area">
-					<a class="mu-video-close-btn" href="#"><i class="fa fa-times" aria-hidden="true"></i></a>
+					<a class="mu-video-close-btn" href="#" onclick="pauseVid()"><i class="fa fa-times" aria-hidden="true" ></i></a>
 					<!--<iframe class="mu-video-iframe" id="myVideo" width="854" height="480" src="UniTaskerDemo.mp4" frameborder="0" allowfullscreen></iframe> -->
 					<!--<video width="854" height="480" controls> <source src="UniTaskerDemo.mp4" type="video/mp4">/video>-->
-					<video width="854" height="480" controls>
-    		<source src="UniTaskerDemo.mp4" type="video/mp4">
+					<video id="demo" width="854" height="480" controls>
+    				<source src="UniTaskerDemo.mp4" type="video/mp4">
+  
 </video>
 
 				</div>
@@ -274,7 +272,7 @@
 									</div>
 
 									<div class="mu-single-screeshot">
-										<img src="Profile.png" alt="App screenshot img">
+										<img src="assets/images/screenshot/Profile.png" alt="App screenshot img">
 									</div>
 
 									<div class="mu-single-screeshot">
@@ -573,7 +571,17 @@
 	<script type="text/javascript" src="assets/js/custom.js"></script>
 
 	
-	
+	<script>
+		var vid = document.getElementById("demo");
+		
+		function playVid() {
+			vid.play();
+		}
+
+		function pauseVid() {
+    		vid.pause();
+	}
+	</script>
     
   </body>
 </html>
